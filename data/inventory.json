@@ -1,0 +1,203 @@
+{
+    "APP-01": {
+        "name": "Customer Portal",
+        "owner": "Digital Sales",
+        "runtime": "Node.js 20.x",
+        "framework": "Next.js 14",
+        "dependencies": [
+            "express@4.19.2",
+            "axios@1.6.8",
+            "dotenv@16.4.5"
+        ],
+        "database": {
+            "type": "PostgreSQL",
+            "version": "15.4",
+            "managed_cloud_supported": true
+        },
+        "security": {
+            "auth_standard": "OIDC / OAuth2",
+            "data_classification": "Internal",
+            "tls_version": "1.3",
+            "hardcoded_secrets": false
+        }
+    },
+    "APP-02": {
+        "name": "Inventory Tracking API",
+        "owner": "Supply Chain",
+        "runtime": "Python 3.11",
+        "framework": "FastAPI",
+        "dependencies": [
+            "pydantic@2.6.4",
+            "sqlalchemy@2.0.28",
+            "alembic@1.13.1"
+        ],
+        "database": {
+            "type": "PostgreSQL",
+            "version": "16.1",
+            "managed_cloud_supported": true
+        },
+        "security": {
+            "auth_standard": "OAuth2 / JWT",
+            "data_classification": "Confidential",
+            "tls_version": "1.3",
+            "hardcoded_secrets": false
+        }
+    },
+    "APP-03": {
+        "name": "Corporate Careers Board",
+        "owner": "Human Resources",
+        "runtime": "Go 1.22",
+        "framework": "Gin",
+        "dependencies": [
+            "gin-gonic/gin@v1.9.1",
+            "golang-jwt/jwt@v5.2.1"
+        ],
+        "database": {
+            "type": "MySQL",
+            "version": "8.0",
+            "managed_cloud_supported": true
+        },
+        "security": {
+            "auth_standard": "SAML 2.0",
+            "data_classification": "Public",
+            "tls_version": "1.2",
+            "hardcoded_secrets": false
+        }
+    },
+    "APP-04": {
+        "name": "Billing Analytics Worker",
+        "owner": "Finance Operations",
+        "runtime": "Java 21",
+        "framework": "Spring Boot 3.2",
+        "dependencies": [
+            "spring-boot-starter-web@3.2.3",
+            "flyway-core@10.8.1"
+        ],
+        "database": {
+            "type": "PostgreSQL",
+            "version": "15.2",
+            "managed_cloud_supported": true
+        },
+        "security": {
+            "auth_standard": "mTLS",
+            "data_classification": "Restricted",
+            "tls_version": "1.3",
+            "hardcoded_secrets": false
+        }
+    },
+    "APP-05": {
+        "name": "Legacy Claim Processor",
+        "owner": "Underwriting",
+        "runtime": "PHP 5.4",
+        "framework": "Custom Monolith",
+        "dependencies": [
+            "php-mcrypt@legacy",
+            "zend-framework@1.12"
+        ],
+        "database": {
+            "type": "Oracle Database",
+            "version": "9i",
+            "managed_cloud_supported": false
+        },
+        "security": {
+            "auth_standard": "NTLM / Basic Auth",
+            "data_classification": "Restricted",
+            "tls_version": "1.0",
+            "hardcoded_secrets": true
+        }
+    },
+    "APP-06": {
+        "name": "Warehouse Dispatcher",
+        "owner": "Logistics",
+        "runtime": "Visual Basic .NET (.NET Framework 3.5)",
+        "framework": "ASP.NET WebForms",
+        "dependencies": [
+            "activex-com-bridge@2.1",
+            "msxml4@legacy"
+        ],
+        "database": {
+            "type": "Microsoft SQL Server",
+            "version": "2008 R2",
+            "managed_cloud_supported": false
+        },
+        "security": {
+            "auth_standard": "Kerberos (On-Prem Active Directory)",
+            "data_classification": "Internal",
+            "tls_version": "1.1",
+            "hardcoded_secrets": true
+        }
+    },
+    "APP-07": {
+        "name": "Partner B2B Gateway",
+        "owner": "Partnerships",
+        "runtime": "Python 2.7",
+        "framework": "Django 1.8",
+        "dependencies": [
+            "pycrypto@2.6.1",
+            "fabric@1.14"
+        ],
+        "database": {
+            "type": "PostgreSQL",
+            "version": "9.4",
+            "managed_cloud_supported": false
+        },
+        "security": {
+            "auth_standard": "Static API Keys",
+            "data_classification": "Confidential",
+            "tls_version": "1.1",
+            "hardcoded_secrets": true
+        }
+    },
+    "APP-08": {
+        "name": "Employee Survey Portal",
+        "owner": "People Operations",
+        "runtime": "Node.js 18.x",
+        "framework": "Express",
+        "dependencies": null,
+        "database": {
+            "type": "Unknown",
+            "version": null,
+            "managed_cloud_supported": null
+        },
+        "security": {
+            "auth_standard": "OIDC / OAuth2",
+            "data_classification": "Internal",
+            "tls_version": "1.2",
+            "hardcoded_secrets": false
+        }
+    },
+    "APP-09": {
+        "name": "Document OCR Indexer",
+        "owner": "Legal Compliance",
+        "runtime": "Python 3.10",
+        "framework": "Flask",
+        "dependencies": [
+            "tesseract-ocr-binding",
+            "flask@2.2.5"
+        ],
+        "database": {
+            "type": "MongoDB",
+            "version": "6.0",
+            "managed_cloud_supported": true
+        },
+        "security": null
+    },
+    "APP-10": {
+        "name": "Field Technician Scheduler",
+        "owner": "Operations",
+        "runtime": null,
+        "framework": null,
+        "dependencies": null,
+        "database": {
+            "type": "PostgreSQL",
+            "version": null,
+            "managed_cloud_supported": null
+        },
+        "security": {
+            "auth_standard": "Basic Auth",
+            "data_classification": null,
+            "tls_version": null,
+            "hardcoded_secrets": false
+        }
+    }
+}

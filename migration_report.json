@@ -1,0 +1,114 @@
+[
+  {
+    "test_case": "APP-08",
+    "summary": {
+      "app_id": "APP-08",
+      "finished": true,
+      "stop_reason": "success",
+      "assessment": {
+        "app_id": "APP-08",
+        "status": "NEEDS_MORE_INFO",
+        "missing_or_unknown_fields": [
+          "database"
+        ],
+        "rationale": "The database configuration is unknown or lacks managed service support flags, which is critical for assessing migration readiness."
+      },
+      "inspected_dimensions": [
+        "inspect_app_overview",
+        "inspect_database",
+        "inspect_dependencies",
+        "inspect_security"
+      ]
+    },
+    "trace": [
+      {
+        "step": 1,
+        "raw_reply": "{\n  \"action\": \"inspect_app_overview\",\n  \"argument\": {\n    \"app_id\": \"APP-08\"\n  }\n}",
+        "action": "inspect_app_overview",
+        "argument": {
+          "app_id": "APP-08"
+        },
+        "parse_ok": true,
+        "validation_ok": true,
+        "observation": "Runtime: Node.js 18.x, Framework: Express. Target runtime cloud support: True.",
+        "check": "Executed successfully (ok=True)",
+        "status": "continue"
+      },
+      {
+        "step": 2,
+        "raw_reply": "{\n  \"action\": \"inspect_dependencies\",\n  \"argument\": {\n    \"app_id\": \"APP-08\"\n  }\n}",
+        "action": "inspect_dependencies",
+        "argument": {
+          "app_id": "APP-08"
+        },
+        "parse_ok": true,
+        "validation_ok": true,
+        "observation": "CRITICAL: Dependency list is NULL or manifest not recorded in inventory.",
+        "check": "Executed successfully (ok=True)",
+        "status": "continue"
+      },
+      {
+        "step": 3,
+        "raw_reply": "{\n  \"action\": \"declare_assessment\",\n  \"argument\": {\n    \"app_id\": \"APP-08\",\n    \"status\": \"NEEDS_MORE_INFO\",\n    \"missing_or_unknown_fields\": [\"dependencies\"],\n    \"rationale\": \"The dependencies section is missing or not recorded in the inventory, which is critical for assessing migration readiness.\"\n  }\n}",
+        "action": "declare_assessment",
+        "argument": {
+          "app_id": "APP-08",
+          "status": "NEEDS_MORE_INFO",
+          "missing_or_unknown_fields": [
+            "dependencies"
+          ],
+          "rationale": "The dependencies section is missing or not recorded in the inventory, which is critical for assessing migration readiness."
+        },
+        "parse_ok": true,
+        "validation_ok": true,
+        "observation": "GOAL CHECK FAILED: You cannot declare an assessment before inspecting all areas. Unchecked: ['inspect_database', 'inspect_security'].",
+        "check": "FAILED: Incomplete inspection gates",
+        "status": "continue"
+      },
+      {
+        "step": 4,
+        "raw_reply": "{\n  \"action\": \"inspect_database\",\n  \"argument\": {\n    \"app_id\": \"APP-08\"\n  }\n}",
+        "action": "inspect_database",
+        "argument": {
+          "app_id": "APP-08"
+        },
+        "parse_ok": true,
+        "validation_ok": true,
+        "observation": "Database configuration is unknown or lacks managed service support flags.",
+        "check": "Executed successfully (ok=True)",
+        "status": "continue"
+      },
+      {
+        "step": 5,
+        "raw_reply": "{\n  \"action\": \"inspect_security\",\n  \"argument\": {\n    \"app_id\": \"APP-08\"\n  }\n}",
+        "action": "inspect_security",
+        "argument": {
+          "app_id": "APP-08"
+        },
+        "parse_ok": true,
+        "validation_ok": true,
+        "observation": "Security specs: TLS=1.2, Auth=OIDC / OAuth2, SecretsClean=True. Issues: [].",
+        "check": "Executed successfully (ok=True)",
+        "status": "continue"
+      },
+      {
+        "step": 6,
+        "raw_reply": "{\n  \"action\": \"declare_assessment\",\n  \"argument\": {\n    \"app_id\": \"APP-08\",\n    \"status\": \"NEEDS_MORE_INFO\",\n    \"missing_or_unknown_fields\": [\"database\"],\n    \"rationale\": \"The database configuration is unknown or lacks managed service support flags, which is critical for assessing migration readiness.\"\n  }\n}",
+        "action": "declare_assessment",
+        "argument": {
+          "app_id": "APP-08",
+          "status": "NEEDS_MORE_INFO",
+          "missing_or_unknown_fields": [
+            "database"
+          ],
+          "rationale": "The database configuration is unknown or lacks managed service support flags, which is critical for assessing migration readiness."
+        },
+        "parse_ok": true,
+        "validation_ok": true,
+        "observation": "Assessment verified and recorded.",
+        "check": "PASSED: All inspection gates completed and verified against ground truth.",
+        "status": "stop"
+      }
+    ]
+  }
+]
